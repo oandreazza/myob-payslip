@@ -1,0 +1,20 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker build --rm=false -t $DOCKER_HUB_ID/myob:latest .
+
+test:
+  override:
+    - docker images
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_HUB_EMAIL -u $DOCKER_HUB_ID -p $DOCKER_HUB_PASSWORD
+      - docker tag $DOCKER_HUB_ID/myob:latest $DOCKER_HUB_ID/myob:$CIRCLE_SHA1
+      - docker push $DOCKER_HUB_ID/myob:latest
+      - docker push $DOCKER_HUB_ID/myob:$CIRCLE_SHA1
