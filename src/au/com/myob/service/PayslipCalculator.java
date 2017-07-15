@@ -39,7 +39,11 @@ public class PayslipCalculator {
 		System.out.println("Enter your Super: e.g(99.50) ");
 		double superRate = scanner.nextDouble();
 		
-		System.out.println("Hello " + name + " this is your Payslip:");
+		System.out.println();
+		System.out.println("##################-----##################");
+		System.out.println();
+		
+		System.out.println("Hello " + name + ", this is your Payslip:");
 		
 		new PayslipCalculator().calculate(salary, superRate);
 	}

@@ -1,0 +1,39 @@
+<project name="Myob" basedir="." default="main">
+
+    <property name="src.dir"     value="src"/>
+    <property name="test.dir"    value="tests"/>
+    <property name="build.dir"   value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="jar.dir"     value="${build.dir}/jar"/>
+    <property name="lib.dir"     value="libs"/>
+
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="**/*.jar"/>
+    </path>
+    <path id="application" location="${jar.dir}/${ant.project.name}.jar"/>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="compile-src" depends="clean">
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath"  includeantruntime="true"/>
+    </target>
+    
+
+
+    <target name="jar" depends="compile-src">
+        <mkdir dir="${jar.dir}"/>
+            <manifest file = "MANIFEST.MF">
+            <attribute name = "Main-Class" value = "au.com.myob.service.PayslipCalculator"/>
+            <attribute name = "Class-Path" value = "."/>
+        </manifest>
+
+         <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}" manifest="MANIFEST.MF" />
+    </target>
+
+
+    <target name="main" depends="jar"/>
+
+</project>
