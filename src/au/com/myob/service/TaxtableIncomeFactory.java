@@ -1,6 +1,5 @@
 package au.com.myob.service;
 
-import au.com.myob.interfaces.IncomeTax;
 import au.com.myob.tax.income.FifthLevelIncomeTax;
 import au.com.myob.tax.income.FirstLevelIncomeTax;
 import au.com.myob.tax.income.FourthLevelIncomeTax;

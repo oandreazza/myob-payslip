@@ -1,4 +1,4 @@
-package au.com.myob.interfaces;
+package au.com.myob.service;
 
 public abstract class IncomeTax {
 	

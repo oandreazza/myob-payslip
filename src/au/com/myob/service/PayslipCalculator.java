@@ -2,8 +2,6 @@ package au.com.myob.service;
 
 import java.util.Scanner;
 
-import au.com.myob.interfaces.IncomeTax;
-
 public class PayslipCalculator {
 	
 	public void calculate(double annualSalary, double superRate){

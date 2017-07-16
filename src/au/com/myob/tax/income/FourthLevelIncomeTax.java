@@ -1,6 +1,6 @@
 package au.com.myob.tax.income;
 
-import au.com.myob.interfaces.IncomeTax;
+import au.com.myob.service.IncomeTax;
 
 public class FourthLevelIncomeTax extends IncomeTax {
 

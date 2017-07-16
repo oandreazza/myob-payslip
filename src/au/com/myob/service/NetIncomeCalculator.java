@@ -1,7 +1,5 @@
 package au.com.myob.service;
 
-import au.com.myob.interfaces.IncomeTax;
-
 public class NetIncomeCalculator {
 	
 	private GrossIncomeCalculator grossIncome;
